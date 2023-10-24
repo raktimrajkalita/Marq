@@ -1,57 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Tag Setter</title>
-
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-      body {
-          font-family: 'Inter', sans-serif;
-          padding: 10px;
-          background-color: #ffff;
-          color: #121315;
-      }
+        body {
+            font-family: 'Inter', sans-serif;
+            padding: 10px;
+            background-color: #ffff;
+            color: #121315;
+        }
 
-      h4 {
-          margin-bottom: 15px;
-      }
+        h4 {
+            margin-bottom: 15px;
+        }
 
-      label {
-          font-size: 12px;
-      }
+        label {
+            font-size: 12px;
+        }
 
-      .input-container {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 10px;
-          margin-bottom: 10px;
-          padding-bottom: 8px;
-          padding-top: 8px;
-      }
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            padding-top: 8px;
+        }
 
-      button {
-          width: 48%; /* Adjusted to 48% to fit side by side with some spacing */
-          padding: 8px;
-          padding-top: 16px;
-          padding-bottom: 16px;
-          margin-top: 5px;
-          background-color: #333;
-          color: #fff;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.2s;
-      }
+        button {
+            width: 48%; /* Adjusted to 48% to fit side by side with some spacing */
+            padding: 8px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            margin-top: 5px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
 
-      button:hover {
-          background-color: #555;
-      }
+        button:hover {
+            background-color: #555;
+        }
 
         /* Set the width of the "Enter Emoji" input to be smaller */
         .small-input {
@@ -61,7 +58,6 @@
             background-color: #fff;
         }
 
-
         /* Set the width of the "Enter Tag Text" input to be larger */
         .large-input {
             width: 70%;
@@ -69,7 +65,6 @@
             border: 1px solid #ccc;
             background-color: #fff;
         }
-
 
         select {
             width: 100%;
@@ -121,8 +116,6 @@
             padding-right: 30px;
         }
 
-
-
         #newTagPresets {
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -142,41 +135,42 @@
         }
 
         /* Style for the sliding toggle switch */
-.toggle-switch {
-    position: relative;
-    width: 40px; /* Adjust the width as needed */
-    height: 20px; /* Adjust the height as needed */
-    background-color: #000;
-    border-radius: 24px; /* Half of the height for a round appearance */
-    cursor: pointer;
-    overflow: hidden;
-}
+        .toggle-switch {
+            position: relative;
+            width: 40px; /* Adjust the width as needed */
+            height: 20px; /* Adjust the height as needed */
+            background-color: #000;
+            border-radius: 24px; /* Half of the height for a round appearance */
+            cursor: pointer;
+            overflow: hidden;
+        }
 
-.toggle-input {
-    position: absolute; /* Make the checkbox cover the toggle */
-    width: 100%;
-    height: 100%;
-    opacity: 0; /* Hide the checkbox */
-    cursor: pointer; /* Make it clickable */
-    z-index: 2; /* Put it above the label */
-}
+        .toggle-input {
+            position: absolute; /* Make the checkbox cover the toggle */
+            width: 100%;
+            height: 100%;
+            opacity: 0; /* Hide the checkbox */
+            cursor: pointer; /* Make it clickable */
+            z-index: 2; /* Put it above the label */
+        }
 
-.toggle-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%; /* Half the width of the switch */
-    height: 100%;
-    background-color: #fff;
-    border-radius: 50%;
-    transition: transform 0.2s;
-    transform: translateX(0); /* Start with the switch turned off */
-    z-index: 1; /* Keep it below the checkbox */
-}
+        .toggle-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%; /* Half the width of the switch */
+            height: 100%;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.2s;
+            transform: translateX(0); /* Start with the switch turned off */
+            z-index: 1; /* Keep it below the checkbox */
+        }
 
-.toggle-input:checked + .toggle-label {
-    transform: translateX(100%); /* Move the label to the right when checked */
-}
+        .toggle-input:checked + .toggle-label {
+            transform: translateX(100%); /* Move the label to the right when checked */
+        }
+
         /* Style for the fixed dialog box */
         .dialog-box {
             background-color: #f5f5f7;
@@ -187,16 +181,12 @@
             color: #555555;
             text-align: center;
             line-height: 2;
-            
-
         }
     </style>
 </head>
-
-
 <body>
     <!-- Fixed dialog box at the top -->
-    <div id="dialog-box"class="dialog-box">
+    <div id="dialog-box" class="dialog-box">
         By default, Marq will run on the page name. <br/> Select anything to run it on that specific selection.
     </div>
 
@@ -213,9 +203,8 @@
                 </select>
                 <!-- Adjusted buttons to sit side by side -->
                 <div class="input-container">
-                  <button id="deletePreset">Delete Preset</button>
+                    <button id="deletePreset">Delete Preset</button>
                     <button id="applyPreset">Apply Preset</button>
-                    
                 </div>
             </div>
         </div>
@@ -224,241 +213,229 @@
 
     <!-- Start of "Add a new tag" section -->
     <div>
-      <div class="section-header" onclick="toggleSection('newTag')">
-          <h4>Add a new tag</h4>
-          <div class="chevron"></div>
-      </div>
-      <div class="section-content" id="newTag-content">
-          <div>
-              <div class="input-container">
-                  <!-- Dropdown for emoji selection -->
-                  <select id="newTagPresets" class="small-input">
+        <div class="section-header" onclick="toggleSection('newTag')">
+            <h4>Add a new tag</h4>
+            <div class="chevron"></div>
+        </div>
+        <div class="section-content" id="newTag-content">
+            <div>
+                <div class="input-container">
+                    <!-- Dropdown for emoji selection -->
+                    <select id="newTagPresets" class="small-input">
+                        <option value=" ">No emoji</option>
+                        <option value="✅">✅ Tick</option>
+                        <option value="❌">❌ Cross</option>
+                        <option value="🟡">🟡 Yellow</option>
+                        <option value="🚀">🚀 Rocket</option>
+                        <option value="🧠">🧠 Brain</option>
+                        <option value="📋">📋 Note</option>
+                        <option value="🛠️">🛠️ Tool</option>
+                        <option value="🏁">🏁 Finish</option>
+                    </select>
+                    <input type="text" id="tagText" placeholder="Enter the text for the tag" class="large-input">
+                </div>
+                <div class="input-container">
+                    <label>Do you want to add a color to the selection?</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="useColorCheckbox" class="toggle-input">
+                        <label for="useColorCheckbox" class="toggle-label"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="input-container" id="colorPickerContainer" style="display: none;">
+                <label style="margin-right: 10px;">Pick a color</label>
+                <input type="color" id="tagColor" class="color-picker-input">
+            </div>
+            <div class="input-container">
+                <button id="savePreset">Save Preset</button>
+                <button id="setTag">Apply</button>
+            </div>
+        </div>
+    </div>
+    <!-- End of "Add a new tag" section -->
 
-                    <option value=" ">No emoji</option>
-                    <option value="✅">✅ Tick</option>
-                    <option value="❌">❌ Cross</option>
-                    <option value="🟡">🟡 Yellow</option>
-                    <option value="🚀">🚀 Rocket</option>
-                    <option value="🧠">🧠 Brain</option>
-                    <option value="📋">📋 Note</option>
-                    <option value="🛠️">🛠️ Tool</option>
-                    <option value="🏁">🏁 Finish</option>
-                    
-                    
-                  </select>
-                  <input type="text" id="tagText" placeholder="Enter the text for the tag" class="large-input">
-              </div>
-              <div class="input-container">
-                  <label>Do you want to add a color to the selection?</label>
-                  <div class="toggle-switch">
-                      <input type="checkbox" id="useColorCheckbox" class="toggle-input">
-                      <label for="useColorCheckbox" class="toggle-label"></label>
-                  </div>
-              </div>
-          </div>
-          <div class="input-container" id="colorPickerContainer" style="display: none;">
-              <label style="margin-right: 10px;">Pick a color</label>
-              <input type="color" id="tagColor" class="color-picker-input">
-          </div>
-          <div class="input-container">
-              <button id="savePreset">Save Preset</button>
-              <button id="setTag">Apply</button>
-          </div>
-      </div>
-  </div>
-  <!-- End of "Add a new tag" section -->
+    <script>
+        // Function to toggle the visibility of the "Presets" section.
+        function togglePresetsSection(presetsAvailable) {
+            const presetsSection = document.getElementById('presets-section');
 
-  <script>
-    // Function to toggle the visibility of the "Presets" section.
-    function togglePresetsSection(presetsAvailable) {
-        const presetsSection = document.getElementById('presets-section');
-
-        if (presetsAvailable) {
-            // If presets are available, show the "Presets" section.
-            presetsSection.style.display = 'block';
-        } else {
-            // If presets are not available, hide the "Presets" section.
-            presetsSection.style.display = 'none';
-        }
-    }
-
-    // Initialize the dropdown with "No presets available" option
-    const presetDropdown = document.getElementById('presets');
-    presetDropdown.innerHTML = '<option value="" disabled selected>No presets available</option>';
-
-    // Function to update the presets dropdown and toggle the "Presets" section
-function updatePresetsDropdownAndSection(presets) {
-    const presetsSection = document.getElementById('presets-section');
-    const presetDropdown = document.getElementById('presets');
-
-    if (presets.length === 0) {
-        // If there are no presets, hide the "Presets" section
-        presetsSection.style.display = 'none';
-        // Clear the preset dropdown
-        presetDropdown.innerHTML = '<option value="" disabled selected>No presets available</option>';
-    } else {
-        // If there are presets, show the "Presets" section
-        presetsSection.style.display = 'block';
-        // Populate the preset dropdown with presets
-        presetDropdown.innerHTML = '';
-        presets.forEach(preset => {
-            const option = document.createElement('option');
-            option.value = preset;
-            option.text = preset; // Use the full preset string
-            presetDropdown.add(option);
-        });
-    }
-}
-
-
-    // Function to set a tag
-    document.getElementById('setTag').onclick = function () {
-        const text = document.getElementById('tagText').value || null;
-
-        // Getting the selected emoji from the dropdown
-        const emojiDropdown = document.getElementById('newTagPresets'); // Updated ID here
-        const selectedEmoji = emojiDropdown.options[emojiDropdown.selectedIndex].value;
-        const emoji = selectedEmoji || null;
-
-        const useColor = document.getElementById('useColorCheckbox').checked;
-        let color = null;
-        if (useColor) {
-            color = document.getElementById('tagColor').value || null;
-        }
-
-        parent.postMessage({ pluginMessage: { type: 'set-tag', text, emoji, color } }, '*');
-    };
-
-    // Function to save a preset
-document.getElementById('savePreset').onclick = function () {
-    const text = document.getElementById('tagText').value || null;
-
-    // Getting the selected emoji from the dropdown
-    const emojiDropdown = document.getElementById('newTagPresets'); // Updated ID here
-    const selectedEmoji = emojiDropdown.options[emojiDropdown.selectedIndex].value;
-    const emoji = selectedEmoji || null;
-
-    const colorInput = document.getElementById('tagColor');
-    const isNoColorSelected = colorInput.getAttribute('data-no-color') === 'true';
-    const color = isNoColorSelected ? "" : colorInput.value || null;
-
-    // Check if both text and emoji are null
-    if (text === null && emoji === null) {
-        alert('Please provide at least one value (text or emoji) to save as a preset.');
-    } else {
-        parent.postMessage({ pluginMessage: { type: 'save-preset', text, emoji, color } }, '*');
-    }
-};
-
-
-    // Function to apply a preset
-    document.getElementById('applyPreset').onclick = function () {
-        const presetValue = document.getElementById('presets').value;
-        if (presetValue) {
-            const [emoji, text, color] = presetValue.split('|');
-            parent.postMessage({ pluginMessage: { type: 'set-tag', emoji, text, color } }, '*');
-        }
-    };
-
-    // Function to delete a preset
-    document.getElementById('deletePreset').onclick = function () {
-        const presetValue = document.getElementById('presets').value;
-        if (presetValue) {
-            parent.postMessage({ pluginMessage: { type: 'delete-preset', preset: presetValue } }, '*');
-        }
-    };
-
-    // Listener for color checkbox
-    document.getElementById('useColorCheckbox').onchange = function () {
-        const isChecked = this.checked;
-        const colorPickerContainer = document.getElementById('colorPickerContainer');
-        if (isChecked) {
-            colorPickerContainer.style.display = 'block';
-        } else {
-            colorPickerContainer.style.display = 'none';
-        }
-    };
-
-    // Listener for receiving messages from the plugin
-    window.onmessage = function (event) {
-        const { type, presets } = event.data.pluginMessage;
-
-        if (type === 'update-presets') {
-            const presetDropdown = document.getElementById('presets');
-            presetDropdown.innerHTML = ''; // Clear current options
-
-            // Populate the preset dropdown with presets
-            presets.forEach(preset => {
-                const [emoji, text, color] = preset.split('|');
-                const option = document.createElement('option');
-                option.value = preset;
-                option.text = `${emoji} ${text} (${color})`;
-                presetDropdown.add(option);
-            });
-
-            // Toggle the visibility of the "Presets" section based on presets availability
-            togglePresetsSection(presets.length > 0);
-        } else if (type === 'selectionChange') {
-            let count = event.data.pluginMessage.count;
-            if (count == 0) {
-                document.getElementById('dialog-box').textContent = ` By default, Marq will run on the page name. Select anything to run it on that specific selection.`;
-
-            } else if (count == 1) {
-                document.getElementById('dialog-box').textContent = `Marq will be applied to ${count} selections.`;
-
+            if (presetsAvailable) {
+                // If presets are available, show the "Presets" section.
+                presetsSection.style.display = 'block';
             } else {
-                document.getElementById('dialog-box').textContent = `Marq will be applied to ${count} selections.`;
-
+                // If presets are not available, hide the "Presets" section.
+                presetsSection.style.display = 'none';
             }
         }
-    };
 
-    // Request stored presets when the UI is loaded
-    parent.postMessage({ pluginMessage: { type: 'get-presets' } }, '*');
+        // Initialize the dropdown with "No presets available" option
+        const presetDropdown = document.getElementById('presets');
+        presetDropdown.innerHTML = '<option value="" disabled selected>No presets available</option>';
 
-    // Function to toggle sections
-    function toggleSection(section) {
-        // List of all sections
-        const sections = ['presets', 'newTag'];
-        sections.forEach(s => {
-            const content = document.getElementById(s + '-content');
-            const chevron = content.previousElementSibling.querySelector('.chevron');
-            const applyButton = document.getElementById('setTag');
-            const savePresetButton = document.getElementById('savePreset');
+        // Function to update the presets dropdown and toggle the "Presets" section
+        function updatePresetsDropdownAndSection(presets) {
+            const presetsSection = document.getElementById('presets-section');
+            const presetDropdown = document.getElementById('presets');
 
-            if (s === section) { // If it's the clicked section
-                if (content.classList.contains('expanded')) {
+            if (presets.length === 0) {
+                // If there are no presets, hide the "Presets" section
+                presetsSection.style.display = 'none';
+                // Clear the preset dropdown
+                presetDropdown.innerHTML = '<option value="" disabled selected>No presets available</option>';
+            } else {
+                // If there are presets, show the "Presets" section
+                presetsSection.style.display = 'block';
+                // Populate the preset dropdown with presets
+                presetDropdown.innerHTML = '';
+                presets.forEach(preset => {
+                    const option = document.createElement('option');
+                    option.value = preset;
+                    option.text = preset; // Use the full preset string
+                    presetDropdown.add(option);
+                });
+            }
+        }
+
+        // Function to set a tag
+        document.getElementById('setTag').onclick = function () {
+            const text = document.getElementById('tagText').value || null;
+
+            // Getting the selected emoji from the dropdown
+            const emojiDropdown = document.getElementById('newTagPresets'); // Updated ID here
+            const selectedEmoji = emojiDropdown.options[emojiDropdown.selectedIndex].value;
+            const emoji = selectedEmoji || null;
+
+            const useColor = document.getElementById('useColorCheckbox').checked;
+            let color = null;
+            if (useColor) {
+                color = document.getElementById('tagColor').value || null;
+            }
+
+            parent.postMessage({ pluginMessage: { type: 'set-tag', text, emoji, color } }, '*');
+        };
+
+        // Function to save a preset
+        document.getElementById('savePreset').onclick = function () {
+            const text = document.getElementById('tagText').value || null;
+
+            // Getting the selected emoji from the dropdown
+            const emojiDropdown = document.getElementById('newTagPresets'); // Updated ID here
+            const selectedEmoji = emojiDropdown.options[emojiDropdown.selectedIndex].value;
+            const emoji = selectedEmoji || null;
+
+            const colorInput = document.getElementById('tagColor');
+            const isNoColorSelected = colorInput.getAttribute('data-no-color') === 'true';
+            const color = isNoColorSelected ? "" : colorInput.value || null;
+
+            // Check if both text and emoji are null
+            if (text === null && emoji === null) {
+                alert('Please provide at least one value (text or emoji) to save as a preset.');
+            } else {
+                parent.postMessage({ pluginMessage: { type: 'save-preset', text, emoji, color } }, '*');
+            }
+        };
+
+        // Function to apply a preset
+        document.getElementById('applyPreset').onclick = function () {
+            const presetValue = document.getElementById('presets').value;
+            if (presetValue) {
+                const [emoji, text, color] = presetValue.split('|');
+                parent.postMessage({ pluginMessage: { type: 'set-tag', emoji, text, color } }, '*');
+            }
+        };
+
+        // Function to delete a preset
+        document.getElementById('deletePreset').onclick = function () {
+            const presetValue = document.getElementById('presets').value;
+            if (presetValue) {
+                parent.postMessage({ pluginMessage: { type: 'delete-preset', preset: presetValue } }, '*');
+            }
+        };
+
+        // Listener for color checkbox
+        document.getElementById('useColorCheckbox').onchange = function () {
+            const isChecked = this.checked;
+            const colorPickerContainer = document.getElementById('colorPickerContainer');
+            if (isChecked) {
+                colorPickerContainer.style.display = 'block';
+            } else {
+                colorPickerContainer.style.display = 'none';
+            }
+        };
+
+        // Listener for receiving messages from the plugin
+        window.onmessage = function (event) {
+            const { type, presets } = event.data.pluginMessage;
+
+            if (type === 'update-presets') {
+                const presetDropdown = document.getElementById('presets');
+                presetDropdown.innerHTML = ''; // Clear current options
+
+                // Populate the preset dropdown with presets
+                presets.forEach(preset => {
+                    const [emoji, text, color] = preset.split('|');
+                    const option = document.createElement('option');
+                    option.value = preset;
+                    option.text = `${emoji} ${text} (${color})`;
+                    presetDropdown.add(option);
+                });
+
+                // Toggle the visibility of the "Presets" section based on presets availability
+                togglePresetsSection(presets.length > 0);
+            } else if (type === 'selectionChange') {
+                let count = event.data.pluginMessage.count;
+                if (count == 0) {
+                    document.getElementById('dialog-box').textContent = ` By default, Marq will run on the page name. Select anything to run it on that specific selection.`;
+                } else if (count == 1) {
+                    document.getElementById('dialog-box').textContent = `Marq will be applied to ${count} selections.`;
+                } else {
+                    document.getElementById('dialog-box').textContent = `Marq will be applied to ${count} selections.`;
+                }
+            }
+        };
+
+        // Request stored presets when the UI is loaded
+        parent.postMessage({ pluginMessage: { type: 'get-presets' } }, '*');
+
+        // Function to toggle sections
+        function toggleSection(section) {
+            // List of all sections
+            const sections = ['presets', 'newTag'];
+            sections.forEach(s => {
+                const content = document.getElementById(s + '-content');
+                const chevron = content.previousElementSibling.querySelector('.chevron');
+                const applyButton = document.getElementById('setTag');
+                const savePresetButton = document.getElementById('savePreset');
+
+                if (s === section) { // If it's the clicked section
+                    if (content.classList.contains('expanded')) {
+                        content.classList.remove('expanded');
+                        chevron.style.transform = "rotate(135deg)"; // Pointing downwards for collapsed
+                        // Hide buttons when collapsing "Add a new tag" section
+                        if (s === 'newTag') {
+                            applyButton.style.display = 'none';
+                            savePresetButton.style.display = 'none';
+                        }
+                    } else {
+                        content.classList.add('expanded');
+                        chevron.style.transform = "rotate(-45deg)"; // Pointing upwards for expanded
+                        // Show buttons when expanding "Add a new tag" section
+                        if (s === 'newTag') {
+                            applyButton.style.display = 'block';
+                            savePresetButton.style.display = 'block';
+                        }
+                    }
+                } else { // For all other sections
                     content.classList.remove('expanded');
                     chevron.style.transform = "rotate(135deg)"; // Pointing downwards for collapsed
-                    // Hide buttons when collapsing "Add a new tag" section
+                    // Hide buttons when collapsing other sections
                     if (s === 'newTag') {
                         applyButton.style.display = 'none';
                         savePresetButton.style.display = 'none';
                     }
-                } else {
-                    content.classList.add('expanded');
-                    chevron.style.transform = "rotate(-45deg)"; // Pointing upwards for expanded
-                    // Show buttons when expanding "Add a new tag" section
-                    if (s === 'newTag') {
-                        applyButton.style.display = 'block';
-                        savePresetButton.style.display = 'block';
-                    }
                 }
-            } else { // For all other sections
-                content.classList.remove('expanded');
-                chevron.style.transform = "rotate(135deg)"; // Pointing downwards for collapsed
-                // Hide buttons when collapsing other sections
-                if (s === 'newTag') {
-                    applyButton.style.display = 'none';
-                    savePresetButton.style.display = 'none';
-                }
-            }
-        });
-    }
-</script>
-
-  
+            });
+        }
+    </script>
 </body>
 </html>
-
-

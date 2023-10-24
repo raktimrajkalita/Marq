@@ -10,6 +10,7 @@ interface PluginMessage {
 // Display the UI part of the plugin.
 figma.showUI(__html__, { width: 370, height: 500 });
 
+// Show a welcome notification.
 figma.notify('Welcome to Marq! 🚀', {
   error: false,
   timeout: 2000
@@ -133,4 +134,3 @@ function hexToRgb(hex: string): RGB {
 
 // When the plugin starts, ask the UI to request all stored presets.
 figma.ui.postMessage({ type: 'get-presets' });
-
